@@ -107,7 +107,7 @@ class Trello {
 
   public function getBoards() {
     $resource = "members/me/boards/?";
-    $this->config["url"] = $this->buildUrl($resource,array());
+    $this->config["url"] = $this->buildUrl($resource,array('key','token'));
     $result = $this->launchRequest();
     return $result;
   }
