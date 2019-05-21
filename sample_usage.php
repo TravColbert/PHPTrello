@@ -39,7 +39,7 @@ $response = $trello->createCard(array("idList" => "5b8...a27","name" => "This is
 $originalCardId = $response->id . "\n";
 
 /**
- * If you pass any legal property the the Trello API recognizes to any public
+ * If you pass any legal property that the Trello API recognizes to any public
  * method it will get passed to Trello.
  * Illegal properties don't get passed to Trello.
  * Options get automatically properly encoded. This is good for properties that
