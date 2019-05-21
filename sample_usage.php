@@ -3,8 +3,8 @@
 include('Trello.php');
 
 $diTrelloKeys = array(
-  "key" => "0d9b7983de10a9322914b8bbdab5df88",
-  "token"  => "2b54b19d4723a714e32ed0fe61c18b4fbe4beb77f493f3d4eb3ff06c3044240e"
+  "key" => "0d9...f88",
+  "token"  => "2b5...40e"
 );
 
 $trello = new Trello("config.ini",$diTrelloKeys);
@@ -29,7 +29,7 @@ if($response) echo count($response) . " boards found\n";
  *
  * To do this, pass an array of options to the 'createCard()' method.
  */
-$response = $trello->createCard(array("idList" => "5b857a4557b19014aaf77a27","name" => "This is another test!","desc" => "This ticket was created by the Trello Class"));
+$response = $trello->createCard(array("idList" => "5b8...a27","name" => "This is another test!","desc" => "This ticket was created by the Trello Class"));
 
 /**
  * All of the responses are converted to PHP objects so you can access them
@@ -51,7 +51,7 @@ $originalCardId = $response->id . "\n";
  * We also try to pass some bogus properties that are not accepted by Trello:
  */
 $myNewCard = array(
-  "idList"    => "5b857a4557b19014aaf77a27",
+  "idList"    => "5b8...a27",
   "name"      => "Here's another card",
   "desc"      => "This is an interesting article. Please read it and move it forward.",
   "due"       => "06/18/2020",
@@ -63,7 +63,7 @@ $response = $trello->createCard($myNewCard);
 /**
  * Now, let's modify that newly-created card. Let's move it to another list
  * supplied by giving the target list ID.
-$response = $trello->updateCard(array("id" => $originalCardId,"idList" => "59f26770c01626a4dbed1326"));
+$response = $trello->updateCard(array("id" => $originalCardId,"idList" => "59f...326"));
 echo $response->id;
  */
 
