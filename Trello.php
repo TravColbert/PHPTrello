@@ -12,6 +12,14 @@ class Trello {
     $this->curlHandle = curl_init();
   }
 
+  private function setOptions($options=array()) {
+    return array_walk($options,array($this,'insertUserValues'));
+  }
+
+  private function unsetOptions($options=array()) {
+    return array_walk($options,array($this,'unsetValue'));
+  }
+
   public function showConfig() {
     var_dump($this->config);
   }
@@ -47,14 +55,6 @@ class Trello {
     }
     $result = curl_exec($this->curlHandle);
     return json_decode($result);
-  }
-
-  private function setOptions($options=array()) {
-    return array_walk($options,array($this,'insertUserValues'));
-  }
-
-  private function unsetOptions($options=array()) {
-    return array_walk($options,array($this,'unsetValue'));
   }
 
   private function setPostFields($relevantKeys) {
